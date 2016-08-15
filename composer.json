@@ -1,0 +1,34 @@
+{
+    "name": "ikhlasservice/yii2-customer",
+    "description": "Yii2 for customer management system.",
+    "type": "yii2-extension",
+    "keywords": ["yii2","extension"],
+    "license": "GPL-3.0",
+    "minimum-stability": "stable",
+    "support": {
+        "source": "https://github.com/ikhlasservice/yii2-customer.git",
+        "issues": "https://github.com/ikhlasservice/yii2-customer/issues"
+    },
+    "authors": [
+        {
+            "name": "Ikhlas Service",
+            "email": "ahamad.jedu@gmail.com",
+            "role" : "Developer"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "*",
+        "andatech/yii2-core": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "ikhlas\\customer\\": ""
+        }
+    },
+    "extra": {
+        "asset-installer-paths": {
+            "npm-asset-library": "vendor/npm",
+            "bower-asset-library": "vendor/bower"
+        }
+    }
+}
