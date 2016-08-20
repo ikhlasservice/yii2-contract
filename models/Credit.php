@@ -197,7 +197,7 @@ class Credit extends \yii\db\ActiveRecord {
         $model = $this->creditDetails;
         $pay = 0;
         $period = $this->period;
-        $profit = $this->customer->profit;
+        $profit = $this->customer->profit->val;
         if ($model) {
             foreach ($model as $detail) {
                 $price = $detail->price;

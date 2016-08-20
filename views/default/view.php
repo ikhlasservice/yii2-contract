@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
-use backend\modules\persons\models\Person;
+use ikhlas\persons\models\Person;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */

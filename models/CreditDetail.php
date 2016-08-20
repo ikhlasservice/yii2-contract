@@ -3,7 +3,6 @@
 namespace ikhlas\contract\models;
 
 use Yii;
-use yii\helpers\ArrayHelper;
 use ikhlas\product\models\Product;
 
 /**
@@ -83,35 +82,42 @@ class CreditDetail extends \yii\db\ActiveRecord {
         $model = self::deleteAll(['id' => $id]);
         //return $model->deleteAll();
     }
-    
+
     /**
      * @return double กำไรต่อรายการ
      */
-    public function getProfitOf(){
-        return $this->price * ($this->credit->period * $this->credit->customer->profit / 100);
-       
+    public function getProfitOf() {
+        //return $this->price * ($this->credit->period * $this->credit->customer->profit / 100);
+//var_dump($this->credit->customer->profit);
+//exit();
+        $price = $this->price;
+        $period = $this->credit->period;
+        $profit = $this->credit->customer->profit->val;
+        
+        $result = $price * (($period * $profit) / 100);
+//หรือ $result = $price * ($period * ($profit / 100));
+        return $result;
     }
-    
+
     /**
      * @return double ยอดรวมต่อรายการ
      */
-    public function getPriceOf(){
-         return ($this->profitOf + $this->price);
+    public function getPriceOf() {
+        return ($this->profitOf + $this->price);
     }
-    
+
     /**
      * @return double ค่างวดต่อรายการ
      */
-    public function getPeriodOf(){
-         return $this->priceOf  / $this->credit->period;
+    public function getPeriodOf() {
+        return $this->priceOf / $this->credit->period;
     }
-    
+
     /**
      * @return double ค่าคอมต่อรายการ
      */
-    public function getComOf(){
-         return ($this->profitOf  * 20 / 100);
-    }   
-    
+    public function getComOf() {
+        return ($this->profitOf * 20 / 100);
+    }
 
 }

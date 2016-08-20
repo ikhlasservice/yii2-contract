@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\helpers\Url;
-use backend\modules\persons\models\Person;
+use ikhlas\persons\models\Person;
 ?>
 
 <div class="credit-form">
