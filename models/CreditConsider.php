@@ -1,6 +1,6 @@
 <?php
 
-namespace backend\modules\contract\models;
+namespace ikhlas\contract\models;
 
 use Yii;
 use yii\helpers\ArrayHelper;

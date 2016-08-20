@@ -1,14 +1,14 @@
 <?php
 
-namespace backend\modules\contract\models;
+namespace ikhlas\contract\models;
 
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use backend\modules\contract\models\Contract;
+use ikhlas\contract\models\Contract;
 
 /**
- * ContractSearch represents the model behind the search form about `backend\modules\contract\models\Contract`.
+ * ContractSearch represents the model behind the search form about `ikhlas\contract\models\Contract`.
  */
 class ContractSearch extends Contract
 {

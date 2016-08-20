@@ -1,24 +1,23 @@
 <?php
 
-namespace backend\modules\contract\controllers;
+namespace ikhlas\contract\controllers;
 
 use Yii;
-use backend\modules\contract\models\Contract;
-use backend\modules\contract\models\Credit;
-use backend\modules\contract\models\CreditDetail;
-use backend\modules\contract\models\CreditConsider;
-use backend\modules\contract\models\CreditSearch;
-use backend\modules\contract\models\CreditDraftSearch;
-use backend\modules\contract\models\CreditOfferSearch;
-use backend\modules\contract\models\CreditConsiderSearch;
-use backend\modules\contract\models\CreditResultSearch;
+use ikhlas\contract\models\Contract;
+use ikhlas\contract\models\Credit;
+use ikhlas\contract\models\CreditDetail;
+use ikhlas\contract\models\CreditConsider;
+use ikhlas\contract\models\CreditSearch;
+use ikhlas\contract\models\CreditDraftSearch;
+use ikhlas\contract\models\CreditOfferSearch;
+use ikhlas\contract\models\CreditConsiderSearch;
+use ikhlas\contract\models\CreditResultSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use backend\modules\product\models\Product;
+use ikhlas\product\models\Product;
 use common\models\Model;
 use yii\helpers\ArrayHelper;
-use yii\helpers\Url;
 use common\models\User;
 use kartik\mpdf\Pdf;
 
@@ -375,7 +374,7 @@ class CreditController extends Controller {
 //                echo $modelName;
 //                exit();
                 switch ($modelName) {
-                    case 'backend\modules\product\models\Product':
+                    case 'ikhlas\product\models\Product':
                         $model->price = $val['price'];
                         $model->status = 1;
                         $model->created_at = time();

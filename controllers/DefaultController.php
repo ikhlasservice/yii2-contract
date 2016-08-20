@@ -1,10 +1,10 @@
 <?php
 
-namespace backend\modules\contract\controllers;
+namespace ikhlas\contract\controllers;
 
 use Yii;
-use backend\modules\contract\models\Contract;
-use backend\modules\contract\models\ContractSearch;
+use ikhlas\contract\models\Contract;
+use ikhlas\contract\models\ContractSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -172,7 +172,7 @@ class DefaultController extends Controller {
 
 
         $dataProvider = new \yii\data\ActiveDataProvider([
-            'query' => \backend\modules\payment\models\PaymentDetail::find()
+            'query' => \ikhlas\payment\models\PaymentDetail::find()
                     ->joinWith('contract')
                     ->joinWith('payment')
                     ->where([

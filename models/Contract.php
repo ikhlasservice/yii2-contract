@@ -1,11 +1,11 @@
 <?php
 
-namespace backend\modules\contract\models;
+namespace ikhlas\contract\models;
 
 use Yii;
 use common\models\User;
 use yii\helpers\ArrayHelper;
-use backend\modules\payment\models\PaymentDetail;
+use ikhlas\payment\models\PaymentDetail;
 
 /**
  * This is the model class for table "contract".
@@ -141,7 +141,7 @@ class Contract extends \yii\db\ActiveRecord {
      * หาค่างวดครั้งที่เท่าไร
      */
     public function getPeriodPay1() {
-        $model = \backend\modules\payment\models\PaymentDetail::find()
+        $model = \ikhlas\payment\models\PaymentDetail::find()
                 ->joinWith('contract')
                 ->joinWith('payment')
                 ->where([
@@ -166,7 +166,7 @@ class Contract extends \yii\db\ActiveRecord {
      * ยอดคงเหลือ
      */
     public function getBalances() {
-        $periodCount = \backend\modules\payment\models\PaymentDetail::find()
+        $periodCount = \ikhlas\payment\models\PaymentDetail::find()
                 ->joinWith('contract')
                 ->joinWith('payment')
                 ->where([

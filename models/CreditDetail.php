@@ -1,10 +1,10 @@
 <?php
 
-namespace backend\modules\contract\models;
+namespace ikhlas\contract\models;
 
 use Yii;
 use yii\helpers\ArrayHelper;
-use backend\modules\product\models\Product;
+use ikhlas\product\models\Product;
 
 /**
  * This is the model class for table "credit_detail".

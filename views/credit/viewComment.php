@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-use backend\modules\contract\models\CreditConsider;
+use ikhlas\contract\models\CreditConsider;
 
 //if (isset($model->staffMaterial_id) && $model->status > 1):
 

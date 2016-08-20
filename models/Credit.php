@@ -1,6 +1,6 @@
 <?php
 
-namespace backend\modules\contract\models;
+namespace ikhlas\contract\models;
 
 use Yii;
 use yii\helpers\ArrayHelper;
@@ -229,7 +229,7 @@ class Credit extends \yii\db\ActiveRecord {
      */
 
     public function getPeriodPay() {
-        $model = \backend\modules\payment\models\PaymentDetail::find()
+        $model = \ikhlas\payment\models\PaymentDetail::find()
                 ->joinWith('contract')
                 ->joinWith('payment')
                 ->where(['contract.id' => $this->contract_id, 'payment.status' => 2])

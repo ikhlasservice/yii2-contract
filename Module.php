@@ -1,6 +1,6 @@
 <?php
 
-namespace backend\modules\contract;
+namespace ikhlas\contract;
 
 /**
  * contract module definition class
@@ -10,7 +10,7 @@ class Module extends \yii\base\Module {
     /**
      * @inheritdoc
      */
-    public $controllerNamespace = 'backend\modules\contract\controllers';
+    public $controllerNamespace = 'ikhlas\contract\controllers';
 
     /**
      * @inheritdoc
