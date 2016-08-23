@@ -93,10 +93,14 @@ class CreditDetail extends \yii\db\ActiveRecord {
         $price = $this->price;
         $period = $this->credit->period;
         $profit = $this->credit->customer->profit->val;
+        //$profit = 1.5;
+        //var_dump($profit);
+//        echo $this->credit->customer->profit->val;
+//        echo "-".$price.$period.$profit."-";
+//        exit();
         
-        $result = $price * (($period * $profit) / 100);
-//หรือ $result = $price * ($period * ($profit / 100));
-        return $result;
+        //$result = $price * (($period * $profit) / 100);
+        return $price * (($period * $profit) / 100);
     }
 
     /**

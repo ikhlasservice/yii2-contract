@@ -4,7 +4,7 @@ namespace ikhlas\contract\models;
 
 use Yii;
 use yii\helpers\ArrayHelper;
-use backend\modules\customer\models\Customer;
+use ikhlas\customer\models\Customer;
 use common\models\User;
 
 /**
@@ -271,43 +271,51 @@ class Credit extends \yii\db\ActiveRecord {
     }
 
     ############################ คำนวนใหม่
-    
-    /**     
+
+    /**
      * @return double ผลยอดรวมทั้งหมด
      */
     public function getTotalPriceOfAll() {
         $creditDetails = $this->creditDetails;
-        $total=0;
-        foreach($creditDetails as $detail){
-            $total+=$detail->priceOf;
+        $total = 0;
+        if ($this->customer->profit_id) {
+            foreach ($creditDetails as $detail) {
+                $total += $detail->priceOf;
+            }
+            return $total;
+        } else {
+            return null;
         }
-        return $total;
     }
+
     /**
      * @return type Format
      */
-    public function getTotalPriceOfAllLabel() {        
-        return Yii::$app->formatter->asDecimal($this->totalPriceOfAll,2);
+    public function getTotalPriceOfAllLabel() {
+        return Yii::$app->formatter->asDecimal($this->totalPriceOfAll, 2);
     }
-    
-    /**     
+
+    /**
      * @return double ผลรวมงวดต่อเดือนทั้งหมด
      */
     public function getTotalPeriodOfAll() {
         $creditDetails = $this->creditDetails;
-        $total=0;
-        foreach($creditDetails as $detail){
-            $total+=$detail->periodOf;
+        $total = 0;
+        if ($this->customer->profit_id) {
+            foreach ($creditDetails as $detail) {
+                $total+=$detail->periodOf;
+            }
+            return $total;
+        } else {
+            return null;
         }
-        return $total;
     }
+
     /**
      * @return type Format
      */
-    public function getTotalPeriodOfAllLabel() {        
-        return Yii::$app->formatter->asDecimal($this->totalPeriodOfAll,2);
+    public function getTotalPeriodOfAllLabel() {
+        return Yii::$app->formatter->asDecimal($this->totalPeriodOfAll, 2);
     }
-    
-    
 
 }
